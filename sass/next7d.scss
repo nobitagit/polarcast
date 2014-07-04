@@ -1,0 +1,423 @@
+/* Welcome to Compass */
+
+@import "compass/css3", "_base", "_movement";
+
+$asphalt: #34495E;
+$dark_asphalt: #2C3E50;
+$sea_green: #16A085;
+$green_blue: #1abc9c;
+$belize: #2980B9;
+$carrot: #E67E22;
+$pomgrenate: #BC1939;
+$white: rgb(205, 235, 223);
+
+// Common styles
+.c_box{
+    overflow: visibile;
+    border-radius: 4px;
+    @extend .cf;
+    background: $dark_asphalt;
+    background: transparentize($dark_asphalt, .1);
+    padding-bottom: 40px;  
+    margin-top: 20px;  
+}
+
+.c_header{
+    height: 41px;
+    line-height: 41px;
+}
+
+
+// Page
+html, body{
+    height: 100%;
+}
+body{
+    background: $asphalt;
+    font-family: 'Lato', sans-serif;
+    background: -webkit-radial-gradient(center, ellipse cover, #5c7684 0%,#3b4147 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #5c7684 0%,#3b4147 99%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #5c7684 0%,#3b4147 99%); /* IE10+ */
+    background: radial-gradient(ellipse at center, #5c7684 0%,#3b4147 99%); /* W3C */
+}	
+.wrap{
+    @extend .cf;
+    width: 960px;
+    padding:0 10px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.logobox{
+    display: inline-block;
+    float: left;
+    width: 270px;
+    text-align: left;
+    .flake{
+        //-webkit-animation: roll 20s infinite linear;
+        &:before{
+            left: -10px;
+            position: relative;
+        }
+    }
+    .beta{
+        font-size: 10px;
+        text-transform: uppercase;
+        left: 0.7em;
+        background: $carrot;
+        color: rgb(235, 235, 235);
+        padding: 3px;
+        border-radius: 4px;
+        text-shadow: none;
+        font-family: Arial;
+    }
+}
+@-webkit-keyframes roll{
+    to{
+        -webkit-transform: rotate(360deg); 
+        -webkit-transform-origin: center;       
+    }
+}
+#logo{
+    line-height: 41px;
+    font-size: 22px;
+    text-indent: 15px;
+    color: #16967D;
+    @include transition(text-shadow .5s);
+    text-shadow: 0 1px 0px #6EDFC9;
+    &:hover{
+    text-shadow: 0 0 5px #82F1DB;
+    }
+}
+#main_h{
+    background: $green_blue;
+    min-height: 41px;
+}
+#main_toolbar{
+    display: inline-block;
+    float: right;
+    width: 200px;
+    color: $white;
+    .btn-group{
+        float: right;
+    }
+}
+form{
+    padding: 0 50px;
+}
+.resultval{
+	position: relative;
+	z-index: 100;
+}
+.tt-suggestions {
+	top: -20px;
+	position: relative;
+	background: #4D5161;
+    color: $white;
+}
+.tt-dropdown-menu{
+    height: 150px;
+    overflow: scroll;
+    width: 100%;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+.tt-suggestion{ background: #4D5161; margin-top: 0;}
+.tt-is-under-cursor{ background: #0b87a9;}
+.checkbox .icons .first-icon, .radio .icons .first-icon, .checkbox .icons .second-icon, .radio .icons .second-icon {
+	background-color: #2C3E50;
+}
+
+h2{
+    margin-bottom: 35px;
+    color: #71808F;
+    text-align: center;
+}
+
+#main_widget{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+    float: left;
+    @extend .c_box;
+}
+#head-1{
+}
+.mw_submit{
+	position: relative;
+	z-index: 3;
+	margin-left: -10px;
+    border-radius: 0 6px 6px 0;
+    line-height: 24px;
+    height: 44px;
+    padding: 0 20px;
+    display: inline-block;
+    float: right;
+    background: #4A6077;
+    border: 2px solid $white;
+}
+.form-control{
+}
+.twitter-typeahead{
+    width: 300px;
+    font-size: 20px;
+    float: left;
+}
+#main_widget .tt-hint{
+	background-color: none !important; 
+}
+.tt-query{
+	background: #34495E;
+	color: $white;
+    font-size: 20px;
+    padding: 20px 12px;
+}
+input.tt-hint{
+    background: #2C3E50 !important;
+    color: #888;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    padding: 20px 12px;
+}
+
+
+
+#today_7d{
+    width: 48%;
+    height: 320px;
+    float: right;
+    color: $white;
+    @extend .c_box;
+    .forecast_h{
+        @extend .c_header;
+        background: none;
+        color: #71808F;
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+    .iconbox, .detailsbox{
+        display: inline-block;
+        float: left;
+        width: 50%;
+        text-align: center;
+    }
+    .iconbox p{
+        font-size: 110px;
+    }
+    .detailsbox p:first-child{
+        font-size: 60px;
+    }
+}
+
+#progress_7d{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: $white;
+    @extend .c_box;
+    .progress_h{
+        @extend .c_header;
+        background: none;
+        color: #71808F;
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+}
+
+.daySlot{
+	color: $white;
+    width: 14.2799999%;
+    float: left;
+    text-align: center;
+}
+.daySlot p{
+	margin: 0;
+}
+.daySlot:nth-child(even){
+	//background: #34495E;
+}
+.daySlot:nth-child(odd){
+	//background: #2C3E50;
+}
+
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot?-utu1cl');
+    src:url('fonts/icomoon.eot?#iefix-utu1cl') format('embedded-opentype'),
+        url('fonts/icomoon.woff?-utu1cl') format('woff'),
+        url('fonts/icomoon.ttf?-utu1cl') format('truetype'),
+        url('fonts/icomoon.svg?-utu1cl#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.icon-weather{
+    font-size: 40px;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+// see: http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
+.icon-sunrise:before {
+    content: "\e600";
+}
+.icon-sun:before, .icon-01d:before{
+    content: "\e601";
+}
+.icon-moon:before {
+    content: "\e603";
+}
+.icon-sun2:before {
+    content: "\e602";
+}
+.icon-windy:before {
+    content: "\e604";
+}
+.icon-wind:before {
+    content: "\e605";
+}
+.icon-snowflake:before {
+    content: "\e606";
+}
+.icon-cloudy:before {
+    content: "\e607";
+}
+.icon-cloud:before {
+    content: "\e609";
+}
+.icon-weather:before {
+    content: "\e60a";
+}
+.icon-weather2:before {
+    content: "\e60b";
+}
+.icon-weather3:before {
+    content: "\e60c";
+}
+.icon-lines:before {
+    content: "\e60d";
+}
+.icon-cloud2:before {
+    content: "\e60e";
+}
+.icon-lightning:before {
+    content: "\e60f";
+}
+.icon-lightning2:before {
+    content: "\e610";
+}
+.icon-rainy:before, .icon-10d:before{ 
+    content: "\e611";
+}
+.icon-rainy2:before, .icon-09d:before{
+    content: "\e612";
+}
+.icon-windy2:before {
+    content: "\e613";
+}
+.icon-windy3:before {
+    content: "\e614";
+}
+.icon-snowy:before {
+    content: "\e615";
+}
+.icon-snowy2:before {
+    content: "\e616";
+}
+.icon-snowy3:before, .icon-13d:before {
+    content: "\e617";
+}
+.icon-weather4:before {
+    content: "\e618";
+}
+.icon-cloudy2:before {
+    content: "\e619";
+}
+.icon-cloud3:before {
+    content: "\e61a";
+}
+.icon-lightning3:before {
+    content: "\e61b";
+}
+.icon-sun3:before {
+    content: "\e61c";
+}
+.icon-moon2:before {
+    content: "\e608";
+}
+.icon-cloudy3:before {
+    content: "\e61d";
+}
+.icon-cloud4:before {
+    content: "\e61e";
+}
+.icon-cloud5:before {
+    content: "\e61f";
+}
+.icon-lightning4:before {
+    content: "\e620";
+}
+.icon-rainy3:before {
+    content: "\e621";
+}
+.icon-rainy4:before {
+    content: "\e622";
+}
+.icon-windy4:before {
+    content: "\e623";
+}
+.icon-windy5:before {
+    content: "\e624";
+}
+.icon-snowy4:before {
+    content: "\e625";
+}
+.icon-snowy5:before {
+    content: "\e626";
+}
+.icon-weather5:before {
+    content: "\e627";
+}
+.icon-cloudy4:before {
+    content: "\e628";
+}
+.icon-lightning5:before {
+    content: "\e629";
+}
+.icon-thermometer:before {
+    content: "\e62a";
+}
+.icon-compass:before {
+    content: "\e62b";
+}
+.icon-none:before {
+    content: "\e62c";
+}
+.icon-Celsius:before {
+    content: "\e62d";
+}
+.icon-Fahrenheit:before {
+    content: "\e62e";
+}
+
+
+
+

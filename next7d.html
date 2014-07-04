@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PolarCast</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/flat-ui.css" rel="stylesheet">
+		<link href="css/next7d.css" rel="stylesheet">
+  </head>
+  <body class="initial">
+  	<div class="wrap">
+    	<div class="row">
+	    	<div id="main_widget">
+	    		<header id="main_h">
+	    			<div class="logobox">
+	    				<p id="logo">
+	    					<!--span class="fui-radio-checked"></span> Polar<strong>Cast</strong-->
+	    					<span class="icon-thermometer"></span> Polar<strong>Cast</strong><sup class="beta">beta</sup>
+	    				</p>
+	    			</div>
+						<div id="main_toolbar" class="btn-toolbar">
+	            <div class="btn-group">
+		            <!--a class="btn btn-primary" href="#fakelink"><span class="fui-time"></span></a>
+		            <a class="btn btn-primary" href="#fakelink"><span class="fui-location"></span></a>
+								<a class="btn btn-primary active" href="#fakelink"><span class="fui-heart"></span></a-->
+								<!-- a class="btn btn-primary" href="#fakelink"><span class="icon-snowflake"></span></a-->
+			        </div>
+	    		</header>
+					<div id="head-1">
+						<h2>Get forecast for</h2>	
+						<form action="" id="choose_city-1">
+							<input type="text" class="form-control" id="main_search-1" placeholder="type city">
+							<input type="submit" class="mw_submit btn btn-lg btn-primary" value="search"/>
+						</form>
+					</div>    		
+		    	</div>
+		    	<div id="today_7d">
+		    		<header class="forecast_h">
+		    			<p>Now</p>
+		    		</header>
+						<div id="today_display">
+
+						</div>
+		    	</div>
+	    	</div>
+	    	<div class="row">
+	    		<div id="progress_7d">
+	    			<header class="progress_h">
+	    				<p>Seven-day progression</p>
+	    			</header>
+	    			<div id="progress_display">
+	    				
+	    			</div>
+	    		</div>
+	    	</div>
+    	</div><!-- wrap -->
+
+		<script id="templ-forecast_single" type="text/x-handlebars-template">
+			{{#if city}}
+			<h2 class="cityname">{{ city.name }}</h2>
+				<div class="bigSlot">
+					<div class="iconbox">
+						<p class="icon-weather icon-{{ list.0.weather.0.icon }}"></p>
+					</div>
+					<div class="detailsbox">
+						<p>{{ list.0.temp.day }}°</p>
+						<!-- p>{{ list.0.weather.0.main }}</p -->
+					</div>					
+				</div>
+			{{else}}
+			<h2 class="cityname">No results.</h2>
+			{{/if}}
+		</script>
+
+
+		<script id="templ-forecast_multi" type="text/x-handlebars-template">
+			{{#if city}}
+				{{#each list}}
+				<div class="daySlot">
+					<p>{{getDay this.dt}}</p>
+					<p class="icon-weather icon-{{ weather.0.icon }}"></p>
+					<p>{{temp.day}}°</p>
+					<p>{{weather.0.main}}</p>
+				</div>
+				{{/each}}
+			{{else}}
+			<h2 class="cityname">No results.</h2>
+			{{/if}}
+		</script>
+
+		<script id="templ-search" type="text/x-handlebars-template">
+			<p class="resultval">{{ value }}</p>
+		</script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+				<script src="http://cdn.bootcss.com/typeahead.js/0.9.3/typeahead.min.js"></script>
+		  <!--   <script src="js/Libs/flatui-checkbox.js"></script>
+		    <script src="js/Libs/flatui-radio.js"></script> -->
+		    <script src="next7d.js"></script>
+    
+    </body>
+</html> 
+ 
+ 
