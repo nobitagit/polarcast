@@ -426,7 +426,7 @@ input.tt-hint {
 .icon-snowflake:before {
   content: "\e606"; }
 
-.icon-cloudy:before {
+.icon-cloudy:before, .icon-02d:before {
   content: "\e607"; }
 
 .icon-cloud:before {
@@ -441,13 +441,13 @@ input.tt-hint {
 .icon-weather3:before {
   content: "\e60c"; }
 
-.icon-lines:before {
+.icon-lines:before, .icon-50d:before {
   content: "\e60d"; }
 
-.icon-cloud2:before {
+.icon-cloud2:before, .icon-03d:before {
   content: "\e60e"; }
 
-.icon-lightning:before {
+.icon-lightning:before, .icon-11d:before {
   content: "\e60f"; }
 
 .icon-lightning2:before {
@@ -465,7 +465,7 @@ input.tt-hint {
 .icon-windy3:before {
   content: "\e614"; }
 
-.icon-snowy:before {
+.icon-snowy:before, .icon-13d:before {
   content: "\e615"; }
 
 .icon-snowy2:before {
@@ -477,7 +477,7 @@ input.tt-hint {
 .icon-weather4:before {
   content: "\e618"; }
 
-.icon-cloudy2:before {
+.icon-cloudy2:before, .icon-04d:before {
   content: "\e619"; }
 
 .icon-cloud3:before {
