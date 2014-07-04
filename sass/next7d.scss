@@ -31,15 +31,45 @@ $white: rgb(205, 235, 223);
 // Page
 html, body{
     height: 100%;
+    background: $asphalt;
+    background: -webkit-radial-gradient(center, ellipse cover, #5c7684 0%,#28313A 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #5c7684 0%,#28313A 99%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #5c7684 0%,#28313A 99%); /* IE10+ */
+    background: radial-gradient(ellipse at center, #5c7684 0%,#28313A 99%); /* W3C */
+
 }
 body{
-    background: $asphalt;
     font-family: 'Lato', sans-serif;
-    background: -webkit-radial-gradient(center, ellipse cover, #5c7684 0%,#3b4147 99%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, #5c7684 0%,#3b4147 99%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, #5c7684 0%,#3b4147 99%); /* IE10+ */
-    background: radial-gradient(ellipse at center, #5c7684 0%,#3b4147 99%); /* W3C */
-}	
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fade;
+    animation-name: fade;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .wrap{
     @extend .cf;
     width: 960px;

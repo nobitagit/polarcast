@@ -173,19 +173,41 @@ a, a:link, a:hover, a:visited, a:active {
   line-height: 41px; }
 
 html, body {
-  height: 100%; }
+  height: 100%;
+  background: #34495e;
+  background: -webkit-radial-gradient(center, ellipse cover, #5c7684 0%, #28313a 99%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #5c7684 0%, #28313a 99%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #5c7684 0%, #28313a 99%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, #5c7684 0%, #28313a 99%);
+  /* W3C */ }
 
 body {
-  background: #34495e;
   font-family: 'Lato', sans-serif;
-  background: -webkit-radial-gradient(center, ellipse cover, #5c7684 0%, #3b4147 99%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover, #5c7684 0%, #3b4147 99%);
-  /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover, #5c7684 0%, #3b4147 99%);
-  /* IE10+ */
-  background: radial-gradient(ellipse at center, #5c7684 0%, #3b4147 99%);
-  /* W3C */ }
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fade;
+  animation-name: fade; }
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fade {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
 
 .wrap {
   width: 960px;
