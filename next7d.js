@@ -89,8 +89,7 @@
 				dataType: "jsonp"
 			}).done(function(data){
 				self.cityData = data;
-				console.log('q=' + this.encodedRequest + '&units=metric&cnt=7&mode=json&callback=?');
-				console.log('pub');
+				//console.log('q=' + this.encodedRequest + '&units=metric&cnt=7&mode=json&APPID=5d7eb6940df94d231178502bdaf4769b&callback=?');
 				$.publish('cityForecast:dataStored');
 			}).fail(function(){
 				//alert('something went wrong');
@@ -102,10 +101,10 @@
 			var temp = Handlebars.compile( $('#templ-forecast_multi').html() ),
 				target = $('<div id="progress_result">');
 				console.log('render');
-				console.log(this.cityData);
+				//console.log(this.cityData);
 				target.html( temp( this.cityData ) );
 				target.hide().appendTo('#progress_display').fadeIn();
-				console.log('q=' + this.encodedRequest + '&units=metric&cnt=7&mode=json&callback=?');
+				//console.log('q=' + this.encodedRequest + '&units=metric&cnt=7&mode=json&callback=?');
 
 			var tempSingle = Handlebars.compile( $('#templ-forecast_single').html() ),
 					targetS = $('<div id="today_cast">');

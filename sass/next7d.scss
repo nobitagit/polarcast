@@ -304,6 +304,30 @@ input.tt-hint{
     -moz-osx-font-smoothing: grayscale;
 }
 
+#today_display .icon-01d{
+    -webkit-animation-duration: 30s;
+    animation-duration: 30s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: rotate;
+    animation-name: rotate;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg); } 
+}
 
 // see: http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
 .icon-sunrise:before {
@@ -333,7 +357,7 @@ input.tt-hint{
 .icon-cloud:before {
     content: "\e609";
 }
-.icon-weather:before {
+.icon-weather1:before {
     content: "\e60a";
 }
 .icon-weather2:before {
